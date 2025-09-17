@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MUL GPA Calculator</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="assets/mul-logo.png"/>
+  <!-- Pyodide (Python in the browser) -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+  <script defer src="config.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="assets/mul-logo.png" alt="MUL Logo" class="logo"/>
+      <h1>MUL GPA Calculator</h1>
+    </div>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2>Select a Semester</h2>
+      <div class="grid">
+        <button class="sem-btn" data-sem="1">1st Semester</button>
+        <button class="sem-btn" data-sem="2">2nd Semester</button>
+        <button class="sem-btn" data-sem="3">3rd Semester</button>
+        <button class="sem-btn" data-sem="4">4th Semester</button>
+        <button class="sem-btn" data-sem="5">5th Semester</button>
+        <button class="sem-btn" data-sem="6">6th Semester</button>
+        <button class="sem-btn" data-sem="7">7th Semester</button>
+        <button class="sem-btn" data-sem="8">8th Semester</button>
+      </div>
+    </section>
+
+    <section id="semester-ui" class="hidden">
+      <div class="inputs">
+        <div>
+          <label>Student Name</label>
+          <input id="student-name" type="text" placeholder="Enter your name"/>
+        </div>
+        <div>
+          <label>Roll Number</label>
+          <input id="roll-no" type="text" placeholder="e.g., 23-ABC-001"/>
+        </div>
+      </div>
+
+      <h3 id="sem-title"></h3>
+
+      <div class="table-wrap">
+        <table id="courses-table">
+          <thead>
+            <tr>
+              <th>Sr. #</th>
+              <th>Course Code</th>
+              <th>Course Name</th>
+              <th>Credit Hours</th>
+              <th>Grade Point</th>
+              <th>Total GP</th>
+            </tr>
+          </thead>
+          <tbody id="courses-body">
+            <!-- rows inserted dynamically -->
+          </tbody>
+          <tfoot>
+            <tr class="summary-row">
+              <td colspan="3" id="gpa-cell">GPA: —</td>
+              <td id="total-ch">0</td>
+              <td></td>
+              <td id="total-gp">0.00</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <div id="submit-wrap" class="hidden">
+        <button id="submit-btn" class="submit-btn">Submit</button>
+        <span id="submit-status"></span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>© MUL GPA Calculator</div>
+  </footer>
+</body>
+</html>

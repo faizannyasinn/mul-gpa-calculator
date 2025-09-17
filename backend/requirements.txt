@@ -1,0 +1,9 @@
+fastapi==0.110.0
+uvicorn[standard]==0.27.1
+SQLAlchemy==2.0.28
+pydantic==1.10.14
+python-dotenv==1.0.1
+
+# DB drivers (choose one in production):
+psycopg2-binary==2.9.9   # PostgreSQL (Railway recommended)
+pyodbc==5.1.0            # SQL Server (if you host Azure SQL / SQL Server 2022)

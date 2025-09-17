@@ -1,0 +1,74 @@
+:root {
+  --purple: #6200ee;
+  --purple-600: #4f00c9;
+  --light-purple: #f5f0ff;
+  --border: #e6e6ef;
+  --text: #1b1b1b;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: #ffffff;
+}
+.site-header {
+  background: var(--purple);
+  color: #fff;
+  padding: 14px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand .logo { width: 40px; height: 40px; object-fit: contain; }
+.brand h1 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: .2px; }
+
+main { padding: 24px; max-width: 1100px; margin: 0 auto; }
+h2 { margin-top: 0; font-size: 22px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 14px;
+}
+.sem-btn {
+  background: white;
+  border: 2px solid var(--purple);
+  color: var(--purple);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.sem-btn:hover { background: var(--light-purple); }
+.hidden { display: none; }
+
+.inputs {
+  display: flex; gap: 16px; flex-wrap: wrap; margin: 14px 0 10px 0;
+}
+.inputs label { display: block; font-weight: 600; margin-bottom: 6px; }
+.inputs input {
+  width: 280px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; outline: none;
+}
+
+.table-wrap { overflow-x: auto; margin-top: 10px; }
+table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--border); }
+thead th {
+  background: var(--purple); color: #fff; text-align: left; padding: 12px; font-size: 14px;
+}
+tbody td { padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 14px; }
+tfoot td { padding: 12px; font-weight: 700; }
+tbody tr:nth-child(even) { background: #fafafa; }
+td input[type="number"] {
+  width: 120px; padding: 8px; border: 1px solid var(--border); border-radius: 8px; outline: none;
+}
+.summary-row td { background: #fff; border-top: 2px solid var(--border); }
+#gpa-cell { color: var(--purple-600); font-weight: 800; }
+.submit-btn {
+  background: var(--purple); color: #fff; border: none; padding: 12px 18px;
+  border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 15px;
+}
+.submit-btn:hover { background: #4b00b7; }
+#submit-status { margin-left: 12px; color: #0d8800; font-weight: 600; }
+.site-footer { padding: 16px 20px; color: #777; border-top: 1px solid var(--border); margin-top: 20px; }
